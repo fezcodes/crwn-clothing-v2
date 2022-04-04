@@ -27,6 +27,7 @@ const SignUpForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (password !== confirmPassword) {
       alert("Passwords don't match");
       return;
@@ -51,7 +52,6 @@ const SignUpForm = () => {
       <h2>Don't have an account yet?</h2>
       <span>Create a new account here:</span>
       <form onSubmit={handleSubmit}>
-        <label>Display Name</label>
         <FormInput
           label="Display Name"
           type="text"
@@ -60,7 +60,6 @@ const SignUpForm = () => {
           name="displayName"
           value={displayName}
         />
-        <label>Email</label>
         <FormInput
           label="Email"
           type="email"
@@ -69,7 +68,6 @@ const SignUpForm = () => {
           name="email"
           value={email}
         />
-        <label>Password</label>
         <FormInput
           label="Password"
           type="password"
@@ -78,7 +76,6 @@ const SignUpForm = () => {
           name="password"
           value={password}
         />
-        <label>Confirm Password</label>
         <FormInput
           label="Confirm Password"
           type="password"
@@ -87,7 +84,9 @@ const SignUpForm = () => {
           name="confirmPassword"
           value={confirmPassword}
         />
-        <Button type="submit">Sign Up</Button>
+        <div className="buttons-container">
+          <Button type="submit">Sign Up</Button>
+        </div>
       </form>
     </div>
   );
