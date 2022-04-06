@@ -1,6 +1,7 @@
 import "./sign-in-form.styles.scss";
 
 import { useState } from "react";
+
 import {
   createUserDocumentFromAuth,
   signAuthUserWithEmailAndPassword,
@@ -17,8 +18,7 @@ const defaultFormFields = {
 
 const SignInForm = () => {
   const signUserWithGoogle = async () => {
-    const { user } = await signInWithGooglePopUp();
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopUp();
   };
   // Setting state for signup form values:
   const [formFields, setFormFields] = useState(defaultFormFields);
