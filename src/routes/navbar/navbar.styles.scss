@@ -4,12 +4,12 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
-  background-color: lightgray;
+  background-color: rgb(233, 233, 233);
 
   .logo-container {
     height: 100%;
     width: 70px;
-    padding: 25px;
+    // padding: 25px;
   }
 
   .nav-links-container {
@@ -20,7 +20,7 @@
     justify-content: flex-end;
 
     .nav-link {
-      padding: 10px 15px;
+      padding: 10px 10px;
       cursor: pointer;
     }
   }
