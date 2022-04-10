@@ -1,5 +1,3 @@
-import "./sign-up-form.styles.scss";
-
 import { useState } from "react";
 import {
   createAuthUserWithEmailAndPassword,
@@ -8,6 +6,7 @@ import {
 
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
+import { SignUpContainer, ButtonsContainer } from "./sign-up-form.styles";
 
 const defaultFormFields = {
   displayName: "",
@@ -48,7 +47,7 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="sign-up-container">
+    <SignUpContainer>
       <h2>Don't have an account yet?</h2>
       <span>Create a new account here:</span>
       <form onSubmit={handleSubmit}>
@@ -84,11 +83,11 @@ const SignUpForm = () => {
           name="confirmPassword"
           value={confirmPassword}
         />
-        <div className="buttons-container">
+        <ButtonsContainer>
           <Button type="submit">Sign Up</Button>
-        </div>
+        </ButtonsContainer>
       </form>
-    </div>
+    </SignUpContainer>
   );
 };
 

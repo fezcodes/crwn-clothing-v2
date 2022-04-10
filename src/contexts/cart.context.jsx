@@ -20,11 +20,17 @@ const incrementCartItemById = (cartItems, cartItemToIncrement) => {
   );
 };
 const decrementCartItemById = (cartItems, cartItemToDecrement) => {
-  return cartItems.map((cartItem) =>
-    cartItem.id === cartItemToDecrement.id
-      ? { ...cartItem, quantity: cartItem.quantity - 1 }
-      : cartItem
-  );
+  if (cartItemToDecrement.quantity > 1) {
+    return cartItems.map((cartItem) =>
+      cartItem.id === cartItemToDecrement.id
+        ? { ...cartItem, quantity: cartItem.quantity - 1 }
+        : cartItem
+    );
+  } else {
+    return cartItems.filter(
+      (currentCartItem) => currentCartItem.id !== cartItemToDecrement.id
+    );
+  }
 };
 const removeCartItemById = (cartItems, cartItemToRemove) => {
   return cartItems.filter(
